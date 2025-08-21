@@ -7,9 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const squareClient = new Client({
-  accessToken: 'EAAAlkgS9BzdbbONnsdvJ87BvS5UuF5hnYHdXDCu19DkhdZuelLUA6eOCxlTOpmn',
-  environment: Environment.Sandbox,
+const client = new Client({
+    accessToken: process.env.SQUARE_ACCESS_TOKEN,
+    environment: 'sandbox'
 });
 
 app.post('/api/process-square-payment', async (req, res) => {
