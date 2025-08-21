@@ -7,9 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const client = new Client({
-    accessToken: process.env.SQUARE_ACCESS_TOKEN,
-    environment: 'sandbox'
+const squareClient = new Client({
+  accessToken: 'EAAAlkgS9BzdbbONnsdvJ87BvS5UuF5hnYHdXDCu19DkhdZuelLUA6eOCxlTOpmn',
+  environment: Environment.Sandbox,
 });
 
 app.post('/api/process-square-payment', async (req, res) => {
@@ -30,5 +30,4 @@ app.post('/api/process-square-payment', async (req, res) => {
     }
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(3000, () => console.log('Server running on port 3000'));
